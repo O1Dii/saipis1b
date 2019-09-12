@@ -1,0 +1,197 @@
+<!DOCTYspanE html>
+  <html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Лабараторная работа 2</title>
+    <style>
+      @keyframes animation {
+        from {
+          left: 0;
+          opacity: .8;
+          position: absolute;
+          transform: rotate(0deg);
+        }
+
+        to {
+          left: 90%;
+          opacity: 1;
+          position: absolute;
+          transform: rotate(360deg);
+          filter: invert(100%) sepia(0%) saturate(100%) brightness(100%) contrast(100%);
+        }
+      }
+
+      body {
+        display: block;
+        margin: 0;
+      }
+
+      .main-table {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .first-col {
+        position: relative;
+        width: 50%;
+        background-origin: content-box;
+      }
+
+      .first-col__background-image {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .moving-image {
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        animation-name: animation;
+        animation-iteration-count: 3;
+        animation-duration: 4s;
+        z-index: 1;
+        animation-direction: alternate;
+      }
+
+      .first-image {
+        position: relative;
+        z-index: -1;
+        height: 200px;
+        width: 400px;
+        left: 100px;
+      }
+
+      .second-image {
+        opacity: .8;
+        position: relative;
+        z-index: -1;
+        height: 200px;
+        width: 400px;
+        top: -50px;
+        left: 50px;
+      }
+
+      .image-table {
+        position: relative;
+        height: 200px;
+        width: 400px;
+        top: -100px;
+      }
+
+      .image-table__background-image {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .image-table__first-header {
+        width: 0;
+      }
+
+      .image-table__title {
+        margin-top: 20px;
+        width: 100%;
+        font-size: 30px;
+        color: rgb(2, 0, 99);
+        text-align: center;
+      }
+
+      .first-text {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 25px;
+        color: rgb(35, 35, 100);
+        margin: 0 30px;
+      }
+
+      .second-text {
+        font-size: 20px;
+        color: rgb(202, 187, 120)21);
+        margin: 0 25px;
+      }
+
+      .third-text {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 15px;
+        color: rgb(35, 200, 100);
+        margin: 0 20px;
+      }
+
+      .second-col {
+        display: flex;
+        height: 100%;
+        align-items: center;
+      }
+
+      .second-col__first-text,
+      .second-col__second-text,
+      .second-col__third-text {
+        text-shadow: black 10px 10px 10px;
+      }
+
+      .second-col__second-text {
+        padding: 5px;
+        border-right: 2px solid rgb(35, 35, 100);
+        border-left: 2px solid rgb(35, 35, 100);
+      }
+
+    </style>
+
+  <body>
+    <img src="moving.png" class="moving-image" alt="movingImage" />
+
+    <table class="main-table">
+      <tr>
+        <td class="first-col">
+          <img src="background.jpg" class="first-col__background-image">
+
+          <img src="1.png" alt="шахта1" class="first-image" />
+          <img src="2.png" alt="шахта2" class="second-image" />
+
+          <table class="image-table">
+            <th>
+              <img src="3.png" alt="шахта3" class="image-table__background-image" />
+              <h3 class="image-table__title">This is UBUNTU</h3>
+            </th>
+
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <p class="first-text">Efficient</p>
+                      <p class="second-text">Powerful</p>
+                      <p class="third-text">Beautiful</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+
+        <td class="second-col">
+          <p class="second-col__first-text">
+            Ubuntu is an open source software operating system that runs from the
+            desktop, to the cloud, to all your
+            internet connected things
+          </p>
+          <p class="second-col__second-text">
+            The world’s most popular operating system across public clouds and
+            OpenStack clouds
+          </p>
+          <p class="second-col__third-text">
+            The fastest way to go from development to production in IoT
+          </p>
+        </td>
+      </tr>
+    </table>
+  </body>
+  </head>
